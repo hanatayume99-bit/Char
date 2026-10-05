@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AU·세계관 위키</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Gowun+Batang:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f4fb;--card:#fff;--ink:#22223b;--mute:#6b6b88;--line:#e4e2f2;--acc:#6c4cf1;--soft:#efecff;--c:#d93f78;--a:#0e9382;--w:#cf801f;--sh:0 1px 2px rgba(34,34,59,.05),0 8px 24px -12px rgba(34,34,59,.18);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#12121d;--card:#1c1c2c;--ink:#ecebf7;--mute:#9b9ab5;--line:#2c2c42;--acc:#9d86ff;--soft:#2a2545;--c:#ff7aa8;--a:#4fd6c2;--w:#f0aa5c;--sh:0 8px 24px -12px rgba(0,0,0,.6)}}
+:root[data-theme=dark]{--bg:#12121d;--card:#1c1c2c;--ink:#ecebf7;--mute:#9b9ab5;--line:#2c2c42;--acc:#9d86ff;--soft:#2a2545;--c:#ff7aa8;--a:#4fd6c2;--w:#f0aa5c;--sh:0 8px 24px -12px rgba(0,0,0,.6)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.8 "Noto Sans KR",system-ui,sans-serif}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:14px max(16px,calc((100% - 1000px)/2 + 16px));background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header h1{font:700 21px/1 "Gowun Batang",serif;margin:0 10px 0 0;letter-spacing:-.01em}
+input,select,textarea,button{font:inherit;font-size:15px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 14px;transition:background .15s,border-color .15s}
+button{cursor:pointer}button:hover{border-color:var(--acc)}
+button.p{background:var(--acc);color:#fff;border-color:var(--acc);font-weight:500}button.p:hover{filter:brightness(1.08)}
+button.d{color:#d6455d}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+#q{flex:1;min-width:150px;border-radius:999px;padding-left:18px}
+header button{border-radius:999px}
+main{display:grid;grid-template-columns:210px 1fr;gap:28px;max-width:1000px;margin:24px auto 56px;padding:0 16px;align-items:start}
+@media(max-width:700px){main{grid-template-columns:1fr;gap:14px}aside{display:flex;gap:6px;overflow-x:auto;position:static!important;padding:0!important;background:none!important;border:0!important;box-shadow:none!important}aside h3{display:none}aside>*{flex:none;width:auto!important;white-space:nowrap}}
+aside{position:sticky;top:84px}
+aside h3{font:700 15px "Gowun Batang",serif;margin:20px 0 8px;color:var(--mute)}aside h3:first-child{margin-top:0}
+.f{display:block;width:100%;text-align:left;border:0;background:none;padding:7px 12px;border-radius:10px;color:var(--mute)}
+.f:hover{background:var(--soft);color:var(--ink)}
+.f.on{background:var(--soft);color:var(--acc);font-weight:700}
+.tag{display:inline-block;font-size:13px;border:0;background:var(--soft);color:var(--acc);border-radius:999px;padding:1px 11px;margin:0 6px 6px 0;cursor:pointer}
+.tag.on{background:var(--acc)!important;color:#fff;font-weight:500!important}
+.pg{background:var(--card);border-radius:18px;padding:28px clamp(18px,4vw,36px);box-shadow:var(--sh);border:1px solid var(--line);border-top:4px solid var(--tc,var(--acc))}
+.pg.char{--tc:var(--c)}.pg.au{--tc:var(--a)}.pg.world{--tc:var(--w)}
+.pg.lst{padding:8px 12px;border-top-color:var(--line)}
+.t{display:inline-block;font-size:13px;font-weight:500;border-radius:999px;padding:0 10px;margin-right:8px;line-height:1.6;color:#fff}
+.t.char{background:var(--c)}.t.au{background:var(--a)}.t.world{background:var(--w)}
+.it{display:block;width:100%;text-align:left;border:0;background:none;border-radius:12px;padding:14px 12px}
+.it:hover{background:var(--soft)}
+.it b{font:700 18px "Gowun Batang",serif}
+.it small{display:block;color:var(--mute);font-size:13px;margin-top:2px}
+.body{white-space:pre-wrap;overflow-wrap:anywhere;max-width:68ch;margin:18px 0 8px}
+a{color:var(--acc);cursor:pointer;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}a.miss{color:#d6455d;text-decoration-style:dashed}
+h2{margin:14px 0 10px;font:700 clamp(28px,6vw,38px)/1.25 "Gowun Batang",serif;letter-spacing:-.02em}
+h3{font:700 16px "Gowun Batang",serif;margin:26px 0 6px}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 0}
+.pg label{display:block;margin:16px 0 6px;color:var(--mute);font-size:14px}
+.pg input,.pg select,.pg textarea{width:100%}
+textarea{min-height:260px;line-height:1.7;resize:vertical}
+.empty{color:var(--mute);padding:24px 12px;text-align:center}
+</style></head><body>
+<header>
+<h1>AU·세계관 위키</h1>
+<input id="q" type="search" placeholder="이름·태그·내용 검색">
+<button class="p" data-a="new">새 문서</button>
+<button data-a="save">파일로 저장</button>
+<button data-a="load">불러오기</button>
+<input id="file" type="file" accept=".json,application/json" hidden>
+</header>
+<main><aside id="side"></aside><section id="view"></section></main>
+<script>
+const TY={char:'캐릭터',au:'AU',world:'세계관'};
+const K='au-wiki-v1';
+let D=[],S={q:'',type:'',tag:'',v:null,e:null};
+try{D=JSON.parse(localStorage.getItem(K)||'[]')}catch(e){D=[]}
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const get=id=>D.find(d=>d.id===id);
+const byName=n=>D.find(d=>d.name===n);
+function persist(){try{localStorage.setItem(K,JSON.stringify(D))}catch(e){}}
+function tags(){const m={};D.forEach(d=>d.tags.forEach(t=>m[t]=(m[t]||0)+1));return Object.entries(m).sort((a,b)=>b[1]-a[1])}
+function body(t){return esc(t).replace(/\[\[([^\]]+)\]\]/g,(_,n)=>{const d=byName(n.trim());return d?`<a data-go="${d.id}">${n}</a>`:`<a class="miss" data-mk="${esc(n.trim())}">${n}</a>`})}
+function side(){
+ const c=t=>D.filter(d=>!t||d.type===t).length;
+ $('#side').innerHTML='<h3>분류</h3>'+['','char','au','world'].map(t=>`<button class="f ${S.type===t?'on':''}" data-ty="${t}">${t?TY[t]:'전체'} (${c(t)})</button>`).join('')+'<h3>태그</h3>'+(tags().map(([t,n])=>`<button class="tag ${S.tag===t?'on':''}" data-tg="${esc(t)}" ${S.tag===t?'style="background:var(--bg);font-weight:700"':''}>${esc(t)} ${n}</button>`).join('')||'<span class="empty">태그가 없어요</span>');
+}
+function list(){
+ const q=S.q.toLowerCase();
+ const r=D.filter(d=>(!S.type||d.type===S.type)&&(!S.tag||d.tags.includes(S.tag))&&(!q||(d.name+d.tags.join(' ')+d.text).toLowerCase().includes(q))).sort((a,b)=>a.name.localeCompare(b.name,'ko'));
+ $('#view').innerHTML=`<div class="pg lst">${r.length?r.map(d=>`<button class="it" data-go="${d.id}"><span class="t ${d.type}">${TY[d.type]}</span><b>${esc(d.name)}</b><small>${esc(d.tags.join(', '))}</small></button>`).join(''):'<p class="empty">문서가 없어요. 「새 문서」로 첫 캐릭터나 AU를 추가해 보세요.</p>'}</div>`;
+}
+function doc(d){
+ const back=D.filter(x=>x.id!==d.id&&x.text.includes('[['+d.name+']]'));
+ $('#view').innerHTML=`<div class="pg ${d.type}"><span class="t ${d.type}">${TY[d.type]}</span><h2>${esc(d.name)}</h2><div>${d.tags.map(t=>`<button class="tag" data-tg="${esc(t)}">${esc(t)}</button>`).join('')}</div><div class="body">${body(d.text)}</div>${back.length?`<h3>이 문서를 언급한 문서</h3>`+back.map(b=>`<a data-go="${b.id}">${esc(b.name)}</a> `).join(''):''}<div class="row"><button class="p" data-ed="${d.id}">편집</button><button data-a="home">목록</button></div></div>`;
+}
+function edit(d){
+ $('#view').innerHTML=`<div class="pg"><label>분류</label><select id="et">${Object.entries(TY).map(([k,v])=>`<option value="${k}" ${d.type===k?'selected':''}>${v}</option>`).join('')}</select><label>이름</label><input id="en" value="${esc(d.name)}"><label>태그 (쉼표로 구분)</label><input id="eg" value="${esc(d.tags.join(', '))}"><label>내용 (다른 문서는 [[이름]]으로 연결)</label><textarea id="ex">${esc(d.text)}</textarea><div class="row"><button class="p" data-a="ok">저장</button><button data-a="home">취소</button>${get(d.id)?'<button class="d" data-a="del">삭제</button>':''}</div></div>`;
+ S.e=d;
+}
+function render(){side();if(S.e)return;const d=get(S.v);d?doc(d):list()}
+function nw(name,type){S.e={id:'d'+Date.now().toString(36),type:type||'char',name:name||'',tags:[],text:''};edit(S.e)}
+document.addEventListener('click',async ev=>{
+ const t=ev.target.closest('[data-a],[data-go],[data-ty],[data-tg],[data-ed],[data-mk]');if(!t)return;
+ const a=t.dataset.a;
+ if(t.dataset.go){S.v=t.dataset.go;S.e=null;render();scrollTo(0,0);return}
+ if(t.dataset.ty!==undefined){S.type=t.dataset.ty;S.v=null;S.e=null}
+ else if(t.dataset.tg!==undefined){S.tag=S.tag===t.dataset.tg?'':t.dataset.tg;S.v=null;S.e=null}
+ else if(t.dataset.ed){edit(get(t.dataset.ed));return}
+ else if(t.dataset.mk){nw(t.dataset.mk);return}
+ else if(a==='new'){nw();return}
+ else if(a==='home'){S.v=null;S.e=null}
+ else if(a==='ok'){
+  const n=$('#en').value.trim();if(!n){$('#en').focus();return}
+  const d=S.e;d.type=$('#et').value;d.name=n;d.tags=$('#eg').value.split(',').map(x=>x.trim()).filter(Boolean);d.text=$('#ex').value;
+  if(!get(d.id))D.push(d);persist();S.v=d.id;S.e=null}
+ else if(a==='del'){if(!confirm('이 문서를 삭제할까요?'))return;D=D.filter(x=>x.id!==S.e.id);persist();S.v=null;S.e=null}
+ else if(a==='save'){
+  try{const dl=await claude.use('downloads');if(!dl){alert('이 환경에서는 파일 저장을 쓸 수 없어요.');return}
+   await dl.save({filename:'au-wiki-backup.json',data:JSON.stringify({version:1,docs:D},null,1)})}catch(e){}
+  return}
+ else if(a==='load'){$('#file').click();return}
+ render();
+});
+$('#file').addEventListener('change',e=>{
+ const f=e.target.files[0];if(!f)return;const r=new FileReader();
+ r.onload=()=>{try{const j=JSON.parse(r.result);const n=(j.docs||[]).filter(d=>d.id&&d.name);
+  if(!n.length)throw 0;if(!confirm(`문서 ${n.length}개를 불러올까요? 같은 id의 문서는 덮어써요.`))return;
+  n.forEach(d=>{d.tags=d.tags||[];d.text=d.text||'';const i=D.findIndex(x=>x.id===d.id);i<0?D.push(d):D[i]=d});
+  persist();S.v=null;S.e=null;render()}catch(x){alert('불러올 수 없는 파일이에요.')}};
+ r.readAsText(f);e.target.value='';
+});
+$('#q').addEventListener('input',e=>{S.q=e.target.value;S.v=null;S.e=null;render()});
+render();
+</script></body></html>
